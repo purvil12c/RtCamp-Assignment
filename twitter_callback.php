@@ -83,11 +83,12 @@
         $followers = $followers->users;
          echo "<ul>";
          foreach ($followers as $f) {
-             echo "<li style='background-image: url('.$f->profile_image_url.');'><h3>".$f->screen_name."</h3></li>";
+             echo "<li>";
+             echo "<h3>$f->screen_name</h3>";
+             echo "</li>";
+
          }
          echo "</ul>";
-
-
 
     ?>
 
@@ -98,8 +99,18 @@
           console.log("!@#");
         });
 
+
+        function getResults(str){
+            console.log(str);
+        }
+
     </script>
+
+    <input type="text" placeholder="Search for followers" onkeyup="getResults(this.value)"></input>
+    <div id="searchresults"></div>
+
     </div>
+
 
 </body>
 </html>
