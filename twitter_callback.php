@@ -9,7 +9,10 @@
     <link href="jquery.bxslider.css" rel="stylesheet" />
 
 </head>
-<body>
+<body style="background-image: url('res/bg.jpg');
+                   background-position: center;
+
+      ">
 
     <div class = "container">
 
@@ -62,10 +65,11 @@
             $token['oauth_token_secret']
         );
 
+        $_SESSION['twitter'] = $twitter;
 
         $tweets = $twitter->get(
             "statuses/home_timeline", [
-                "count" => "12"
+                "count" => "10"
             ]
         );
         echo "<ul class='bxslider'>";
@@ -79,6 +83,15 @@
                 "count" => "10"
             ]
         );
+
+        $allfollowers = $twitter->get(
+                                    "followers/list",[
+
+                                    ]
+                                );
+
+         $_SESSION['allfollowers']=$allfollowers;
+
         //echo $followers[0]->name;
         $followers = $followers->users;
          echo "<ul>";
@@ -89,6 +102,8 @@
 
          }
          echo "</ul>";
+
+
 
     ?>
 
@@ -102,10 +117,27 @@
 
         function getResults(str){
             console.log(str);
+            if (str.length==0) {
+                document.getElementById("searchresults").innerHTML="";
+                document.getElementById("searchresults").style.border="0px";
+                return;
+              }
+
+              xmlhttp=new XMLHttpRequest();
+
+              xmlhttp.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                  document.getElementById("searchresults").innerHTML=this.responseText;
+                  document.getElementById("searchresults").style.border="1px solid #A5ACB2";
+                }
+              }
+              xmlhttp.open("GET","getfollowersresult.php?q="+str,true);
+              xmlhttp.send();
         }
 
     </script>
-
+    <hr>
+    <h3>Search your followers</h3>
     <input type="text" placeholder="Search for followers" onkeyup="getResults(this.value)"></input>
     <div id="searchresults"></div>
 
