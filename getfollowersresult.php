@@ -18,7 +18,7 @@
     foreach ($allfollowers as $f) {
         if(stristr($f->screen_name, $q)){
             echo "<li>";
-            echo "<h3>$f->screen_name</h3>";
+            echo "<h3 onclick='console.log(this.value)'>$f->screen_name</h3>";
             echo "</li>";
         }
      }

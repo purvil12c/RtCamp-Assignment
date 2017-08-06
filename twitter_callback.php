@@ -7,7 +7,11 @@
     <script src="jquery.bxslider.js"></script>
     <!-- bxSlider CSS file -->
     <link href="jquery.bxslider.css" rel="stylesheet" />
-
+    <style>
+        h1,h2,h3{
+            color:#ffffff;
+        }
+    </style>
 </head>
 <body style="background-image: url('res/bg.jpg');
                    background-position: center;
@@ -20,9 +24,6 @@
             Latest 10 tweets -
         </h1>
         <hr>
-
-
-
 
     <?php
 
@@ -74,7 +75,7 @@
         );
         echo "<ul class='bxslider'>";
         foreach ($tweets as $tweet) {
-            echo "<li><h3>".$tweet->text."</h3></li>";
+            echo "<li><h3 style='color:#000000'>".$tweet->text."</h3></li>";
         }
         echo "</ul>";
 
