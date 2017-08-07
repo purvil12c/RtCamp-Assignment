@@ -136,6 +136,27 @@
               xmlhttp.send();
         }
 
+        function getTweets(str){
+        console.log(str);
+        xmlhttp=new XMLHttpRequest();
+
+                      xmlhttp.onreadystatechange=function() {
+                        if (this.readyState==4 && this.status==200) {
+                          document.getElementsByClassName("bxslider")[0].innerHTML=this.responseText;
+
+                          console.log(this.responseText);
+                          $(document).ready(function(){
+                                     $('.bxslider').bxSlider();
+                                     console.log("!@#");
+                                   });
+                        }
+                      }
+                      xmlhttp.open("GET","getusertimeline.php?q="+str,true);
+                      xmlhttp.send();
+
+
+        }
+
     </script>
     <hr>
     <h3>Search your followers</h3>
