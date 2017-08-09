@@ -24,6 +24,7 @@
             Latest 10 tweets -
         </h1>
         <button class="btn btn-success" onclick="getTweets(this.value)">Get my tweets</button>
+        <button class="btn btn-success" onclick="location.href='download.php'">Download Tweets in JSON</button>
         <hr>
 
     <?php
@@ -91,6 +92,13 @@
                 "count" => "10"
             ]
         );
+
+        $usertweets = $twitter->get(
+                    "statuses/user_timeline", [
+                        "count" => "200"
+                    ]
+        );
+        $_SESSION['usertweets']=$usertweets;
 
         $_SESSION['call_count']=1;
 
