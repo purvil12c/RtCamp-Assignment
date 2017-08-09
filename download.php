@@ -8,12 +8,12 @@
 
      $usertweets = $_SESSION['usertweets'];
 
-     $fp = fopen('{$token['oauth_token']}.json', 'w');
+     $fp = fopen('mytweets.json', 'w');
      fwrite($fp, json_encode($usertweets));
      fclose($fp);
 
      header("Content-type: $type");
-     header("Content-Disposition: attachment;filename={$token['oauth_token']}.txt");
+     header("Content-Disposition: attachment;filename=mytweets.json");
      header("Content-Transfer-Encoding: binary");
      header('Pragma: no-cache');
      header('Expires: 0');
