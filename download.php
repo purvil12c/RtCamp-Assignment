@@ -12,13 +12,13 @@
      fwrite($fp, json_encode($usertweets));
 
 
+     $type = filetype($fp);
      header("Content-type: $type");
      header("Content-Disposition: attachment;filename=mytweets.json");
      header("Content-Transfer-Encoding: binary");
      header('Pragma: no-cache');
      header('Expires: 0');
 
-     set_time_limit(0);
      readfile($fp);
 
 
