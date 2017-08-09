@@ -121,7 +121,7 @@
                                         ]
             );
             $cursor = $allfollowers->next_cursor;
-            print_r($allfollowers);
+            //print_r($allfollowers);
             $allfollowers = $allfollowers->users;
             foreach ($allfollowers as $f) {
                          array_push($a, $f->screen_name);
