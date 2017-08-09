@@ -12,8 +12,7 @@
      fwrite($fp, json_encode($usertweets));
 
 
-     $type = filetype($fp);
-     header("Content-type: $type");
+     header("Content-type: json");
      header("Content-Disposition: attachment;filename=mytweets.json");
      header("Content-Transfer-Encoding: binary");
      header('Pragma: no-cache');
