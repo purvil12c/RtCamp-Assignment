@@ -23,6 +23,7 @@
         <h1>
             Latest 10 tweets -
         </h1>
+        <button class="btn btn-success" onclick="getTweets(this.value)">Get my tweets</button>
         <hr>
 
     <?php
@@ -66,14 +67,34 @@
             $token['oauth_token_secret']
         );
 
+        $twitter2 = new TwitterOAuth(
+                    $config['consumer_key2'],
+                    $config['consumer_secret2'],
+                    $token['oauth_token'],
+                    $token['oauth_token_secret']
+        );
+
+        $twitter3 = new TwitterOAuth(
+                    $config['consumer_key3'],
+                    $config['consumer_secret3'],
+                    $token['oauth_token'],
+                    $token['oauth_token_secret']
+        );
+
+
         $_SESSION['twitter'] = $twitter;
+        //$_SESSION['twitter2'] = $twitter2;
+        //$_SESSION['twitter3'] = $twitter3;
 
         $tweets = $twitter->get(
             "statuses/home_timeline", [
                 "count" => "10"
             ]
         );
-        echo "<ul class='bxslider'>";
+
+        $_SESSION['call_count']=1;
+
+        echo "<ul class='bxslider' id = 'slidershow'>";
         foreach ($tweets as $tweet) {
             echo "<li><h3 style='color:#000000'>".$tweet->text."</h3></li>";
         }
@@ -85,13 +106,37 @@
             ]
         );
 
-        $allfollowers = $twitter->get(
-                                    "followers/list",[
+        $_SESSION['call_count']+=1;
 
-                                    ]
-                                );
+        $a=array();
+        //array_push($a,"blue","yellow");
 
-         $_SESSION['allfollowers']=$allfollowers;
+        $cursor = -1;
+        $i = 0;
+        do{
+            $allfollowers = $twitter->get(
+                                        "followers/list",[
+                                         "count"=>"200",
+                                         "cursor"=>$cursor,
+                                        ]
+            );
+            $cursor = $allfollowers->next_cursor;
+            print_r($allfollowers);
+            $allfollowers = $allfollowers->users;
+            foreach ($allfollowers as $f) {
+                         array_push($a, $f->screen_name);
+
+
+             }
+             //print_r($cursor);
+
+            $_SESSION['call_count']+=1;
+
+        }while($cursor!=0);
+
+
+
+         $_SESSION['allfollowers']=$a;
 
         //echo $followers[0]->name;
         $followers = $followers->users;
@@ -110,6 +155,8 @@
 
 
     <script>
+
+        var slider = $('.bxslider').bxSlider();
         $(document).ready(function(){
           $('.bxslider').bxSlider();
           console.log("!@#");
@@ -137,18 +184,17 @@
         }
 
         function getTweets(str){
+
         console.log(str);
         xmlhttp=new XMLHttpRequest();
 
                       xmlhttp.onreadystatechange=function() {
                         if (this.readyState==4 && this.status==200) {
-                          document.getElementsByClassName("bxslider")[0].innerHTML=this.responseText;
-
-                          console.log(this.responseText);
-                          $(document).ready(function(){
-                                     $('.bxslider').bxSlider();
-                                     console.log("!@#");
-                                   });
+                          console.log("RESPONSE  - "+this.responseText);
+                          document.getElementsByClassName('bxslider')[0].innerHTML =  this.responseText;
+                          //console.log("Properties - "+slider.getOwnPropertyNames());
+                          console.log("SLIDER - "+slider);
+                          slider.reloadSlider();
                         }
                       }
                       xmlhttp.open("GET","getusertimeline.php?q="+str,true);
@@ -156,6 +202,7 @@
 
 
         }
+
 
     </script>
     <hr>

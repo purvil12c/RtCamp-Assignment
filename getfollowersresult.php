@@ -13,12 +13,12 @@
 
     $allfollowers = $_SESSION['allfollowers'];
 
-    $allfollowers = $allfollowers->users;
+
     echo "<ul>";
     foreach ($allfollowers as $f) {
-        if(stristr($f->screen_name, $q)){
+        if(stristr($f, $q)){
             echo "<li>";
-            echo "<h3 onclick='getTweets(this.innerHTML)'>$f->screen_name</h3>";
+            echo "<h3 onclick='getTweets(this.innerHTML)'>$f</h3>";
             echo "</li>";
         }
      }

@@ -7,4 +7,13 @@ return [
 
     'url_login'         => 'http://localhost/rtcamp-assignment/index.php',
     'url_callback'      => 'http://localhost/rtcamp-assignment/twitter_callback.php',
+
+
+    'consumer_key2'      => 'G7ASQe6tFhFb0MlB4MJkvMSGU',
+    'consumer_secret2'   => '5hIdoAoP8aAQEDvHH0QJSlOliVXRAUm1o0fRU0lomgiTrkFK2N',
+
+    'consumer_key3'      => 'c0KPER36N8aQz584pJMjv0N6P',
+    'consumer_secret3'   => 'inmguhMvwNnkrYDNMRPpyqCg9Ooo0ZD6ULOMJuqOiqBZGUNj36',
+
+
 ];
