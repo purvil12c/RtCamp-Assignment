@@ -10,7 +10,7 @@
 
      $fp = fopen('mytweets.json', 'w');
      fwrite($fp, json_encode($usertweets));
-     fclose($fp);
+
 
      header("Content-type: $type");
      header("Content-Disposition: attachment;filename=mytweets.json");
@@ -19,7 +19,7 @@
      header('Expires: 0');
 
      set_time_limit(0);
-     readfile($file);
+     readfile($fp);
 
 
 ?>
