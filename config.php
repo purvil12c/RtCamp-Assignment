@@ -5,8 +5,8 @@ return [
     'consumer_key'      => '1jT61PmX0GsxQ6XIt2mXVdKuD',
     'consumer_secret'   => 'QPVyPpukRURxL4p441XoF4a8gl4VBj59aLuu7XBq0oAqlCIlzy',
 
-    'url_login'         => 'http://localhost/rtcamp-assignment/index.php',
-    'url_callback'      => 'http://localhost/rtcamp-assignment/twitter_callback.php',
+    'url_login'         => 'http://35.196.217.172/rtcamp-assignment/index.php',
+    'url_callback'      => 'http://35.196.217.172/rtcamp-assignment/twitter_callback.php',
 
 
     'consumer_key2'      => 'G7ASQe6tFhFb0MlB4MJkvMSGU',
