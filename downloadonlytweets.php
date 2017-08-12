@@ -21,10 +21,16 @@
 
      }
 
+     $output="[";
+     foreach ($mytweets as $tweet){
+        $output+=$tweet;
+     }
+     $output+="]";
+
      //$myJSON = json_encode($mytweets);
 
      $fp = fopen('./mytweets/'.$oauth_token.'.json', 'w');
-     file_put_contents('./mytweets/'.$oauth_token.'.json', $mytweets);
+     file_put_contents('./mytweets/'.$oauth_token.'.json', $output);
      //fwrite($fp, json_encode($usertweets));
 
 
