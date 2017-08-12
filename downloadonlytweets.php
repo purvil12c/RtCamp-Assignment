@@ -12,7 +12,12 @@
 
      $mytweets = array();
      foreach ($usertweets as $tweet) {
-        array_push($mytweets,{tweet: $tweet->text, tweetby: $tweet->user->screen_name});
+
+        $myObj->tweet = $tweet->text;
+        $myObj->tweetby = $tweet->user->screen_name;
+
+        $temp = json_encode($myObj);
+        array_push($mytweets,$temp);
 
      }
 
