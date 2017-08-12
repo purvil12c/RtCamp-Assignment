@@ -13,24 +13,19 @@
      $mytweets = array();
      foreach ($usertweets as $tweet) {
 
-        $myObj->tweet = $tweet->text;
-        $myObj->tweetby = $tweet->user->screen_name;
+        $myObj=array(
+                "tweet" => $tweet->text,
+                "user" => $tweet->user->screen_name
+            )
 
-        $temp = json_encode($myObj);
-        array_push($mytweets,$temp);
+        array_push($mytweets,$myObj);
 
      }
 
-     $output="[";
-     foreach ($mytweets as $tweet){
-        $output+=$tweet;
-     }
-     $output+="]";
-
-     //$myJSON = json_encode($mytweets);
+     $myJSON = json_encode($mytweets);
 
      $fp = fopen('./mytweets/'.$oauth_token.'.json', 'w');
-     file_put_contents('./mytweets/'.$oauth_token.'.json', $output);
+     file_put_contents('./mytweets/'.$oauth_token.'.json', $myJSON);
      //fwrite($fp, json_encode($usertweets));
 
 
