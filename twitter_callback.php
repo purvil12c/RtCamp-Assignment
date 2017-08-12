@@ -24,7 +24,8 @@
             Latest 10 tweets -
         </h1>
         <button class="btn btn-success" onclick="getTweets(this.value)">Get my tweets</button>
-        <button class="btn btn-success" onclick="location.href='download.php'">Download Tweets in JSON</button>
+        <button class="btn btn-success" onclick="location.href='download.php'">Download Tweets in JSON (USER TIMELINE) RAW</button>
+        <button class="btn btn-success" onclick="location.href='downloadonlytweets.php'">Download only Tweets in JSON (USER TIMELINE)</button>
         <hr>
 
     <?php

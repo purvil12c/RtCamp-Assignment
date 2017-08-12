@@ -8,7 +8,10 @@
 
      $usertweets = $_SESSION['usertweets'];
 
-     //$fp = fopen('mytweets.json', 'w');
+     $oauth_token = $_SESSION['oauth_token'];
+
+
+     //$fp = fopen($oauth_token.'.json', 'w');
      file_put_contents('mytweets.json', json_encode($usertweets));
      //fwrite($fp, json_encode($usertweets));
 
@@ -19,7 +22,7 @@
      header('Pragma: no-cache');
      header('Expires: 0');
 
-     readfile('mytweets.json');
+     readfile($oauth_token.'.json');
 
 
 ?>
