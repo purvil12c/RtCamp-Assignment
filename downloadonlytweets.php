@@ -24,7 +24,7 @@
 
 
      header("Content-type: json");
-     header("Content-Disposition: attachment;filename=mytweets_raw.json");
+     header("Content-Disposition: attachment;filename=mytweets_onlytweets.json");
      header("Content-Transfer-Encoding: binary");
      header('Pragma: no-cache');
      header('Expires: 0');
