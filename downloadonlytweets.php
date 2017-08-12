@@ -16,7 +16,7 @@
         $myObj=array(
                 "tweet" => $tweet->text,
                 "user" => $tweet->user->screen_name
-            )
+            );
 
         array_push($mytweets,$myObj);
 
