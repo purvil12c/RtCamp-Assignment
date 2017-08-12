@@ -68,6 +68,8 @@
             $token['oauth_token_secret']
         );
 
+        $_SESSION['token'] = $token;
+
         $twitter2 = new TwitterOAuth(
                     $config['consumer_key2'],
                     $config['consumer_secret2'],
