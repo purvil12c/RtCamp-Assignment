@@ -9,7 +9,7 @@
      $usertweets = $_SESSION['usertweets'];
 
      $fp = fopen('mytweets.json', 'w');
-     file_put_contents($file, json_encode($usertweets));
+     file_put_contents($fp, json_encode($usertweets));
      //fwrite($fp, json_encode($usertweets));
 
 
