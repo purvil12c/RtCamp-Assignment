@@ -26,6 +26,8 @@
         <button class="btn btn-success" onclick="getTweets(this.value)">Get my tweets</button>
         <button class="btn btn-success" onclick="location.href='download.php'">Download Tweets in JSON (USER TIMELINE) RAW</button>
         <button class="btn btn-success" onclick="location.href='downloadonlytweets.php'">Download only Tweets in JSON (USER TIMELINE)</button>
+        <button class="btn btn-success" onclick="location.href='downloadonlytweetscsv.php'">Download only Tweets in CSV (USER TIMELINE)</button>
+
         <hr>
 
     <?php
