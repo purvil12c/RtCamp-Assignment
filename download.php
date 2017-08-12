@@ -11,18 +11,18 @@
      $oauth_token = $_SESSION['oauth_token'];
 
 
-     $fp = fopen($oauth_token.'.json', 'w');
-     file_put_contents($oauth_token.'.json', json_encode($usertweets));
+     $fp = fopen('/mytweets/'.$oauth_token.'raw.json', 'w');
+     file_put_contents('/mytweets/'.$oauth_token.'raw.json', json_encode($usertweets));
      //fwrite($fp, json_encode($usertweets));
 
 
      header("Content-type: json");
-     header("Content-Disposition: attachment;filename=mytweets.json");
+     header("Content-Disposition: attachment;filename=mytweets_raw.json");
      header("Content-Transfer-Encoding: binary");
      header('Pragma: no-cache');
      header('Expires: 0');
 
-     readfile($oauth_token.'.json');
+     readfile('/mytweets/'.$oauth_token.'raw.json');
 
 
 ?>
