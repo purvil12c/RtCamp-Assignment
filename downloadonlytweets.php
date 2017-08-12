@@ -24,7 +24,7 @@
      //$myJSON = json_encode($mytweets);
 
      $fp = fopen('./mytweets/'.$oauth_token.'.json', 'w');
-     file_put_contents('./mytweets/'.$oauth_token.'.json', $myJSON);
+     file_put_contents('./mytweets/'.$oauth_token.'.json', $mytweets);
      //fwrite($fp, json_encode($usertweets));
 
 
