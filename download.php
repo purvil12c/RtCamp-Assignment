@@ -8,7 +8,7 @@
 
      $usertweets = $_SESSION['usertweets'];
 
-     $fp = fopen('mytweets.json', 'w');
+     //$fp = fopen('mytweets.json', 'w');
      file_put_contents('mytweets.json', json_encode($usertweets));
      //fwrite($fp, json_encode($usertweets));
 
@@ -19,7 +19,7 @@
      header('Pragma: no-cache');
      header('Expires: 0');
 
-     readfile($fp);
+     readfile('mytweets.json');
 
 
 ?>
