@@ -12,7 +12,7 @@
 
      $mytweets = array();
      foreach ($usertweets as $tweet) {
-        array_push($mytweets,$tweet->text);
+        array_push($mytweets,{tweet: $tweet->text, tweetby: $tweet->user->screen_name});
 
      }
 
