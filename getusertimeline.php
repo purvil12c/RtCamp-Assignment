@@ -21,6 +21,7 @@
                         "screen_name" => $q
                     ]
         );
+        print_r($tweets);
     }
     foreach ($tweets as $tweet) {
         echo "<li><blockquote>
