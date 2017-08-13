@@ -25,7 +25,7 @@
      //$myJSON = json_encode($mytweets);
 
      $fp = fopen('./mytweets/'.$oauth_token.'.csv', 'w');
-     fputcsv('./mytweets/'.$oauth_token.'.csv', $mytweets);
+     fputcsv($fp, $mytweets);
      //fwrite($fp, json_encode($usertweets));
 
 
