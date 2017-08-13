@@ -26,7 +26,7 @@
     foreach ($tweets as $tweet) {
         $user = $tweet->user;
         $screenname = $user->screen_name;
-        echo "<li style='margin:50px;'><blockquote>
+        echo "<li style='margin-left:50px;margin-right:50px;'><blockquote>
                              <p>$tweet->text</p>
                              <footer>$screenname</footer>
                            </blockquote></li>";
