@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- bxSlider Javascript file -->
-    <script src="jquery.bxslider.js"></script>
+    <script src="lib/slider/jquery.bxslider.js"></script>
     <!-- bxSlider CSS file -->
-    <link href="jquery.bxslider.css" rel="stylesheet" />
+    <link href="lib/slider/jquery.bxslider.css" rel="stylesheet" />
     <style>
         h1,h2,h3{
             color:#ffffff;
