@@ -23,10 +23,10 @@
         );
     }
     foreach ($tweets as $tweet) {
-        echo "<blockquote>
-                <p>$tweet->text</p>
-                <footer>$tweet->user->screen_name</footer>
-              </blockquote>";
+        echo "<li><blockquote>
+                             <p>$tweet->text</p>
+                             <footer>$tweet->user->screen_name</footer>
+                           </blockquote></li>";
     }
 
 ?>
