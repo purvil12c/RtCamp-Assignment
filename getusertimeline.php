@@ -24,8 +24,11 @@
         //print_r($tweets);
     }
     foreach ($tweets as $tweet) {
+        $user = $tweet->user;
+        $screenname = $user->screen_name;
         echo "<li><blockquote>
                              <p>$tweet->text</p>
+                             <footer>$screenname</footer>
                            </blockquote></li>";
     }
 
