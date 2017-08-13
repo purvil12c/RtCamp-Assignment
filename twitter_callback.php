@@ -107,7 +107,7 @@
 
         $_SESSION['call_count']=1;
 
-        echo "<ul class='bxslider' style="padding:10px;" id = 'slidershow'>";
+        echo "<ul class='bxslider' style='padding:10px;' id = 'slidershow'>";
         foreach ($tweets as $tweet) {
             echo "<li><h3 style='color:#000000'>".$tweet->text."</h3></li>";
         }
