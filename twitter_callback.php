@@ -109,7 +109,12 @@
 
         echo "<ul class='bxslider' style='padding:10px;' id = 'slidershow'>";
         foreach ($tweets as $tweet) {
-            echo "<li><h3 style='color:#000000'>".$tweet->text."</h3></li>";
+            $user = $tweet->user;
+                    $screenname = $user->screen_name;
+                    echo "<li style='padding:50px;'><blockquote>
+                                         <p>$tweet->text</p>
+                                         <footer>$screenname</footer>
+                                       </blockquote></li>";
         }
         echo "</ul>";
 
