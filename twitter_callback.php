@@ -230,7 +230,7 @@
 
     </script>
     <hr>
-    <h3>Search your followers</h3>
+    <h3>Search your followers (Click on any of the listed users to fill the slider at the top with his/her tweets)</h3>
     <input type="text" placeholder="Search for followers" onkeyup="getResults(this.value)"></input>
     <div id="searchresults"></div>
 
