@@ -108,13 +108,18 @@
         $_SESSION['call_count']=1;
 
         echo "<ul class='bxslider' style='padding:10px;' id = 'slidershow'>";
+        if(sizeof($tweets)==0){
+
+                echo "<li style='margin-left:50px;margin-right:50px;'><h1>No tweets from this user.</h1></li>"
+        }else{
         foreach ($tweets as $tweet) {
             $user = $tweet->user;
                     $screenname = $user->screen_name;
-                    echo "<li style= margin-left:50px;margin-right:50px;'><blockquote>
+                    echo "<li style= margin-left:50px;margin-right:50px;'><blockquote style='border-left: 5px solid #FFA500;'>
                                          <p>$tweet->text</p>
                                          <footer>$screenname</footer>
                                        </blockquote></li>";
+        }
         }
         echo "</ul>";
 
