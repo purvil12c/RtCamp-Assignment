@@ -25,8 +25,7 @@
     }
     foreach ($tweets as $tweet) {
         echo "<li><blockquote>
-                             <p>$tweet['text']</p>
-                             <footer></footer>
+                             <p>$tweet->text</p>
                            </blockquote></li>";
     }
 
