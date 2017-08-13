@@ -23,7 +23,10 @@
         );
     }
     foreach ($tweets as $tweet) {
-        echo "<li><h3 style='color:#000000'>".$tweet->text."</h3></li>";
+        echo "<blockquote>
+                <p>$tweet->text</p>
+                <footer>$tweet->user->screen_name</footer>
+              </blockquote>";
     }
 
 ?>
