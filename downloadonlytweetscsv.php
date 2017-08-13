@@ -1,6 +1,6 @@
 <?php
 
-     require "twitteroauth/autoload.php";
+     require "lib/twitteroauth/autoload.php";
      use Abraham\TwitterOAuth\TwitterOAuth;
 
      session_start();
@@ -10,23 +10,19 @@
 
      $oauth_token = $_SESSION['oauth_token'];
 
+     $fp = fopen('./mytweets/'.$oauth_token.'.csv', 'w');
      $mytweets = array();
      foreach ($usertweets as $tweet) {
 
-        $myObj=array(
-                "tweet" => $tweet->text,
-                "user" => $tweet->user->screen_name
-            );
-
-        array_push($mytweets,$myObj);
+        array_push($mytweets,"".$tweet->text.",".$tweet->user->screen_name);
 
      }
 
-     //$myJSON = json_encode($mytweets);
 
-     $fp = fopen('./mytweets/'.$oauth_token.'.csv', 'w');
-     fputcsv($fp, $mytweets);
-     //fwrite($fp, json_encode($usertweets));
+     foreach ($mytweets as $line)
+     {
+       fputcsv($fp,explode(',',$line));
+     }
 
 
      header("Content-type: json");

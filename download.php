@@ -1,6 +1,6 @@
 <?php
 
-     require "twitteroauth/autoload.php";
+     require "lib/twitteroauth/autoload.php";
      use Abraham\TwitterOAuth\TwitterOAuth;
 
      session_start();
