@@ -227,6 +227,25 @@
 
         }
 
+        function getPublicSearchResults(str){
+            console.log(str);
+            if (str.length==0) {
+                document.getElementById("publicresults").innerHTML="";
+                document.getElementById("publicresults").style.border="0px";
+                return;
+              }
+
+              xmlhttp=new XMLHttpRequest();
+
+              xmlhttp.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                  document.getElementById("publicresults").innerHTML=this.responseText;
+                  document.getElementById("publicresults").style.border="1px solid #A5ACB2";
+                }
+              }
+              xmlhttp.open("GET","publicsearch.php?q="+str,true);
+              xmlhttp.send();
+        }
 
     </script>
     <hr>
