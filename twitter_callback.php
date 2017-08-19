@@ -234,6 +234,11 @@
     <input type="text" placeholder="Search for followers" onkeyup="getResults(this.value)"></input>
     <div id="searchresults"></div>
 
+    <h3>Search public accounts (Click on any of the listed users to download their tweets in PDF)</h3>
+    <input type="text" placeholder="Search for public accounts" onkeyup="getPublicSearchResults(this.value)"></input>
+    <div id="publicresults"></div>
+
+
     </div>
 
 
